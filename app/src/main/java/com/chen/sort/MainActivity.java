@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public final static int SORT_TYPE_RADIX = 10;
     public final static int SORT_TYPE_END = 10;
 
+    private boolean verbose = false;
 
     private Random random;
     private TextView input;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     private void prev() {
         sort(array, sortIdx);
         output.setText(Arrays.toString(array));
-        sortIdx = sortIdx == 0 ? sortIdx = 2 : --sortIdx % (SORT_TYPE_END + 1);
+        sortIdx = sortIdx == 0 ? sortIdx = SORT_TYPE_END : --sortIdx % (SORT_TYPE_END + 1);
     }
 
     private void next() {
@@ -73,8 +74,10 @@ public class MainActivity extends AppCompatActivity {
         input.setText(Arrays.toString(array));
         output.setText("");
 
-        sort(array, SORT_TYPE_BUBBLE_BI_DIRECT);
-        output.setText(Arrays.toString(array));
+        if (verbose) {
+            sort(array, SORT_TYPE_BUBBLE_BI_DIRECT);
+            output.setText(Arrays.toString(array));
+        }
     }
 
 
