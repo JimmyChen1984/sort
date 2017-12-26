@@ -2,6 +2,7 @@ package com.chen.sort;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -25,9 +26,11 @@ public class MainActivity extends AppCompatActivity {
     public final static int SORT_TYPE_RADIX = 10;
     public final static int SORT_TYPE_END = 10;
 
+    //debug
     private boolean verbose = false;
 
     private Random random;
+    private TextView sortName;
     private TextView input;
     private TextView output;
     private int[] array;
@@ -42,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sortName = findViewById(R.id.sortName);
         input = findViewById(R.id.inText);
         output = findViewById(R.id.outText);
         findViewById(R.id.prev).setOnClickListener(clickListener);
@@ -51,16 +55,62 @@ public class MainActivity extends AppCompatActivity {
         sortIdx = SORT_TYPE_START;
         random = new Random();
         genArray();
+        sort();
+        output.setText(Arrays.toString(array));
+    }
+
+    private void updateSortName() {
+        String name = "";
+        switch (sortIdx) {
+            case SORT_TYPE_BUBBLE:
+                name = "冒泡";
+                break;
+            case SORT_TYPE_BUBBLE_BI_DIRECT:
+                name = "双向冒泡";
+                break;
+            case SORT_TYPE_INSERT:
+                name = "插入";
+                break;
+            case SORT_TYPE_INSERT_DICHOTOMY:
+                name = "二分插入";
+                break;
+            case SORT_TYPE_SELECT:
+                name = "选择";
+                break;
+            case SORT_TYPE_EXCHANGE:
+                name = "交换";
+                break;
+            case SORT_TYPE_QUICK:
+                name = "快速";
+                break;
+            case SORT_TYPE_MERGE:
+                name = "归并";
+                break;
+            case SORT_TYPE_MINHEAP:
+                name = "堆";
+                break;
+            case SORT_TYPE_SHELL:
+                name = "希尔";
+                break;
+            case SORT_TYPE_RADIX:
+                name = "基数";
+                break;
+            default:
+                break;
+        }
+        sortName.setText(name);
     }
 
     private void prev() {
-        sort(array, sortIdx);
+        genArray();
+        sort();
         output.setText(Arrays.toString(array));
         sortIdx = sortIdx == 0 ? sortIdx = SORT_TYPE_END : --sortIdx % (SORT_TYPE_END + 1);
     }
 
     private void next() {
-        sort(array, sortIdx);
+        genArray();
+        sort();
         output.setText(Arrays.toString(array));
         sortIdx = ++sortIdx % (SORT_TYPE_END + 1);
     }
@@ -73,11 +123,21 @@ public class MainActivity extends AppCompatActivity {
         }
         input.setText(Arrays.toString(array));
         output.setText("");
+    }
 
-        if (verbose) {
-            sort(array, SORT_TYPE_BUBBLE_BI_DIRECT);
-            output.setText(Arrays.toString(array));
-        }
+    private void sort() {
+        updateSortName();
+        printArray(array);
+        if (verbose)
+            sort(array, SORT_TYPE_RADIX);
+        else
+            sort(array, sortIdx);
+        printArray(array);
+    }
+
+    private void printArray(int[] arr) {
+        String str = Arrays.toString(arr);
+        Log.d(TAG, str);
     }
 
 

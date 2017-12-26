@@ -37,10 +37,9 @@ public:
 
     static void sortExchange(int a[], int n);
 
+    static void sortQuick(int *a, int n);
 
-    static void sortQuick(int a[], int n);
-
-    static void sortMerge(int a[], int n);
+    static void sortMerge(int *a, int n);
 
     static void sortMinHeap(int a[], int n);
 
@@ -51,6 +50,18 @@ public:
 
 private:
     static void swap(int &a, int &b);
+
+    static void __sortQuick(int *a, int start, int end);
+
+    static void mergeArray(int *a, int start, int mid, int end, int *b);
+
+    static void __sortMerge(int *a, int start, int end, int *b);
+
+    static void minHeapFixDown(int *a, int n, int i);
+
+    static void makeMinHeap(int *a, int n);
+
+    static int maxNumLen(int *a, int n);
 
 };
 
