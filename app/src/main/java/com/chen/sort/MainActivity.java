@@ -2,7 +2,6 @@ package com.chen.sort;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -13,9 +12,19 @@ public class MainActivity extends AppCompatActivity {
     public final static String TAG = "Sort";
     public final static int SORT_TYPE_START = 0;
     public final static int SORT_TYPE_BUBBLE = 0;
-    public final static int SORT_TYPE_INSERT = 1;
-    public final static int SORT_TYPE_SELECT = 2;
-    public final static int SORT_TYPE_END = 2;
+    public final static int SORT_TYPE_BUBBLE_BI_DIRECT = 1;
+    public final static int SORT_TYPE_INSERT = 2;
+    public final static int SORT_TYPE_INSERT_DICHOTOMY = 3;
+    public final static int SORT_TYPE_SELECT = 4;
+
+    public final static int SORT_TYPE_EXCHANGE = 5;
+    public final static int SORT_TYPE_QUICK = 6;
+    public final static int SORT_TYPE_MERGE = 7;
+    public final static int SORT_TYPE_MINHEAP = 8;
+    public final static int SORT_TYPE_SHELL = 9;
+    public final static int SORT_TYPE_RADIX = 10;
+    public final static int SORT_TYPE_END = 10;
+
 
     private Random random;
     private TextView input;
@@ -63,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
         }
         input.setText(Arrays.toString(array));
         output.setText("");
+
+        sort(array, SORT_TYPE_BUBBLE_BI_DIRECT);
+        output.setText(Arrays.toString(array));
     }
 
 
