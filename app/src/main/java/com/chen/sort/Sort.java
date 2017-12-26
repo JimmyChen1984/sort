@@ -1,10 +1,69 @@
 package com.chen.sort;
 
+import android.util.Log;
+
+import java.util.Arrays;
+
 /**
  * Created by csq on 2017/12/26.
  */
 
 public class Sort {
+    public static final String TAG = "Sort";
+
+    public static class ListNode {
+        int val;
+        ListNode next;
+
+    }
+
+    public static void printListNode(ListNode listNode) {
+        String str = "";
+        while (listNode != null) {
+            str += listNode.val + "->";
+            listNode = listNode.next;
+        }
+        str += "null";
+        Log.d(TAG, str);
+
+    }
+
+    public static ListNode reverseListNode(ListNode head) {
+        ListNode reverseHead = null;
+        ListNode next;
+        ListNode cur = head;
+        while (cur != null) {
+            next = cur.next;
+            cur.next = reverseHead;
+            reverseHead = cur;
+            cur = next;
+        }
+        return reverseHead;
+    }
+
+    public static void testReverse() {
+        ListNode head = new ListNode();
+        head.val = 1;
+        head.next = new ListNode();
+        head.next.val = 2;
+        head.next.next = new ListNode();
+        head.next.next.val = 3;
+        head.next.next.next = new ListNode();
+        head.next.next.next.val = 4;
+        head.next.next.next.next = new ListNode();
+        head.next.next.next.next.val = 5;
+        head.next.next.next.next.next = null;
+
+        printListNode(head);
+        ListNode listNode = reverseListNode(head);
+        printListNode(listNode);
+    }
+
+    static public void printArray(int[] arr) {
+        String str = Arrays.toString(arr);
+        Log.d(TAG, str);
+    }
+
     /**
      * 直接插入排序
      *

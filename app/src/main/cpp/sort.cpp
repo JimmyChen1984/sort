@@ -26,10 +26,10 @@ void CSort::sort(int *a, int n, ESortType type) {
             sortExchange(a, n);
             break;
         case ekSortType_Quick:
-            sortInsert(a, n);
+            sortQuick(a, n);
             break;
         case ekSortType_Merge:
-            sortQuick(a, n);
+            sortMerge(a, n);
             break;
         case ekSortType_MinHeap:
             sortMinHeap(a, n);
@@ -84,6 +84,7 @@ void CSort::sortInsert(int *a, int n) {
         a[j + 1] = val;
     }
 }
+
 void CSort::sortInsertDichotomy(int *a, int n) {
 
 }
@@ -99,11 +100,16 @@ void CSort::sortSelect(int *a, int n) {
         swap(a[i], a[minIdx]);
     }
 }
+
 void CSort::sortExchange(int *a, int n) {
 
 }
 
 void CSort::sortQuick(int *a, int n) {
+
+}
+
+void CSort::sortMerge(int *a, int n) {
 
 }
 
