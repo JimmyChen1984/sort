@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
         }
         input.setText(Arrays.toString(array));
         output.setText("");
+        test();
     }
 
     private void sort() {
@@ -167,5 +168,7 @@ public class MainActivity extends AppCompatActivity {
     public native String stringFromJNI();
 
     public native void sort(int[] arr, int type);
+
+    public native void test();
 
 }

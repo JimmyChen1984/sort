@@ -2,7 +2,7 @@
 // Created by csq on 2017/12/26.
 //
 
-#include "sort.h"
+#include "Sort.h"
 
 
 void CSort::sort(int *a, int n, ESortType type) {

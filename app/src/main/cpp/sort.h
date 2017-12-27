@@ -1,6 +1,7 @@
 //
 // Created by csq on 2017/12/26.
 //
+#include <stack>
 
 #ifndef SORT_SORT_H
 #define SORT_SORT_H
@@ -63,6 +64,27 @@ private:
 
     static int maxNumLen(int *a, int n);
 
+};
+
+
+
+class MaxStack {
+
+public:
+    MaxStack() {};
+
+    ~MaxStack() {};
+
+    void push(int val);
+
+    int top();
+
+    int  pop();
+
+
+private:
+    std::stack<int> m_dataStack;
+    int max;
 };
 
 
