@@ -3,6 +3,7 @@
 #include "Sort.h"
 #include "Stack.h"
 #include "iostream"
+#include "MaxStack.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -45,6 +46,20 @@ Java_com_chen_sort_MainActivity_test(JNIEnv *env, jobject instance) {
     std::cout << std::endl;
     CStack<int> cStack(stack);
     CStack<int> stack1 = stack;
+
+    CMaxStack maxStack;
+    int a[] = {5, 4, 3, 2, 1, 10, 9, 8, 7, 6, 15};
+
+    int len = sizeof(a) / sizeof(int);
+    for (int i = 0; i < len; i++)
+        maxStack.push(a[i]);
+    int max = maxStack.max();
+
+    for (int i = 0; i < len; i++) {
+        maxStack.pop(val);
+        max = maxStack.max();
+
+    }
 }
 
 #ifdef __cplusplus
