@@ -21,6 +21,7 @@ add_library( # Sets the name of the library.
              src/main/cpp/Sort.cpp
              src/main/cpp/Stack.cpp
              src/main/cpp/MaxStack.cpp
+             src/main/cpp/MaxQueue.cpp
              )
 
 # Searches for a specified prebuilt library and stores the path as a

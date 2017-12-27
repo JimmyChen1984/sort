@@ -1,7 +1,6 @@
 //
 // Created by csq on 2017/12/26.
 //
-#include <stack>
 
 #ifndef SORT_SORT_H
 #define SORT_SORT_H
@@ -66,26 +65,6 @@ private:
 
 };
 
-
-
-class MaxStack {
-
-public:
-    MaxStack() {};
-
-    ~MaxStack() {};
-
-    void push(int val);
-
-    int top();
-
-    int  pop();
-
-
-private:
-    std::stack<int> m_dataStack;
-    int max;
-};
 
 
 #endif //SORT_SORT_H
