@@ -7,7 +7,8 @@
 
 #include "stddef.h"
 
-template<class T> class CStack {
+template<class T>
+class CStack {
 public:
     CStack();
 

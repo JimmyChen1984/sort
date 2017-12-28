@@ -23,7 +23,7 @@ typedef struct STreeNode {
     STreeNode *left;
     STreeNode *right;
 
-    STreeNode(int v) : val(v), left(NULL), right(NULL) {};
+    STreeNode(int v) : val(v), left(NULL), right(NULL) {}
 } StreeNode, *STreeNode_p;
 
 #endif //SORT_DEF_H

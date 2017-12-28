@@ -111,7 +111,7 @@ SNode_p CUtils::sortListQuickUnChange(SNode_p head) {
 }
 
 void CUtils::sortListQuick(SNode_p pre, SNode_p head, SNode_p tail) {
-    if (head == tail && head->next == tail)
+    if (head == tail || head->next == tail)
         return;
     SNode_p mid = listPartition(pre, head, tail);
     sortListQuick(pre, head, tail);
