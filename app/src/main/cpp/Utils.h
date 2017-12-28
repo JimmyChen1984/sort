@@ -34,6 +34,8 @@ public:
 
     static STreeNode_p reverseTree(STreeNode_p root);
 
+    static bool compareTree(STreeNode_p left, STreeNode_p right);
+
 };
 
 

@@ -156,3 +156,16 @@ STreeNode_p CUtils::reverseTree(STreeNode_p root) {
     return root;
 
 }
+
+bool CUtils::compareTree(STreeNode_p left, STreeNode_p right) {
+    if (left == NULL && right == NULL)
+        return true;
+    if (left == NULL || right == NULL)
+        return false;
+
+    if (left->val != right->val)
+        return false;
+    bool leftCompare = compareTree(left->left, left->right);
+    bool rightCompare = compareTree(right->left, right->right);
+    return leftCompare && rightCompare;
+}
