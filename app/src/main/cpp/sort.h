@@ -21,6 +21,7 @@ typedef enum {
 } ESortType;
 
 class CSort {
+    friend class CUtils;
 public:
     static void sort(int a[], int n, ESortType type);
 
