@@ -70,7 +70,7 @@ SNode_p CUtils::loopListEntry(SNode_p h) {
 
 }
 
-void CUtils::sortListQuicker(SNode_p head) {
+void CUtils::sortListQuick(SNode_p head) {
     if (head == NULL || head->next == NULL)
         return;
     sortListQuick(head, NULL);

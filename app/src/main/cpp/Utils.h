@@ -19,7 +19,7 @@ public:
 
 
     //交换node的值
-    static void sortListQuicker(SNode_p head);
+    static void sortListQuick(SNode_p head);
 
     static void sortListQuick(SNode_p head, SNode_p tail);
 
