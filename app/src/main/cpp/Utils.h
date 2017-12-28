@@ -32,6 +32,8 @@ public:
 
     static SNode_p listPartition(SNode_p pre, SNode_p head, SNode_p tail);
 
+    static STreeNode_p reverseTree(STreeNode_p root);
+
 };
 
 

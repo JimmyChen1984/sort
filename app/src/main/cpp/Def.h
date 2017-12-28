@@ -13,8 +13,17 @@
 typedef struct SNode {
     int val;
     SNode *next;
+
     SNode(int value) : val(value), next(NULL) {}
 
 } SNode, *SNode_p, **SNode_pp;
+
+typedef struct STreeNode {
+    int val;
+    STreeNode *left;
+    STreeNode *right;
+
+    STreeNode(int v) : val(v), left(NULL), right(NULL) {};
+} StreeNode, *STreeNode_p;
 
 #endif //SORT_DEF_H

@@ -142,3 +142,17 @@ SNode_p CUtils::listPartition(SNode_p pre, SNode_p head, SNode_p tail) {
     pre->next = low.next;
     return head;
 }
+
+STreeNode_p CUtils::reverseTree(STreeNode_p root) {
+    if (root == NULL)
+        return root;
+    root->left = reverseTree(root->left);
+    root->right = reverseTree(root->right);
+
+    STreeNode_p temp
+    temp = root->left;
+    root->left = root->right;
+    root->right = temp;
+    return root;
+
+}
